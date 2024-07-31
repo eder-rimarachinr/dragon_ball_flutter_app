@@ -2,7 +2,7 @@ import 'package:dbz_app/screens/planet_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:dbz_app/screens/character_screen.dart';
 
-import 'package:dbz_app/screens/transformation_screen.dart';
+// import 'package:dbz_app/screens/transformation_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -17,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<Widget> _pages = const [
     CharacterScreen(),
     PlanetScreen(),
-    TransformationScreen(),
+    // TransformationScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -50,10 +50,10 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: Icon(Icons.public),
             label: 'Planetas',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.transform),
-            label: 'Transformaciones',
-          ),
+          // BottomNavigationBarItem(
+          //   icon: Icon(Icons.transform),
+          //   label: 'Transformaciones',
+          // ),
         ],
       ),
     );

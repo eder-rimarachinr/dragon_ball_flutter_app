@@ -101,6 +101,15 @@ class SearchCharacter extends SearchDelegate {
                           width: 60,
                           height: 60,
                           fit: BoxFit.cover,
+                          errorBuilder: (context, error, stackTrace) {
+                            // Mostrar una imagen alternativa en caso de error
+                            return Image.asset(
+                              'assets/images/ball.png', // Ruta de la imagen alternativa
+                              width: 50.0,
+                              height: 50.0,
+                              fit: BoxFit.fill,
+                            );
+                          },
                         )
                       : const Icon(Icons.image, size: 50),
                   title: Text(

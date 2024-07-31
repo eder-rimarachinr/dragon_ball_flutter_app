@@ -77,6 +77,15 @@ class _PlanetDetailScreenState extends State<PlanetDetailScreen> {
           width: double.infinity,
           height: 350,
           fit: BoxFit.cover,
+          errorBuilder: (context, error, stackTrace) {
+            // Mostrar una imagen alternativa en caso de error
+            return Image.asset(
+              'assets/images/ball.png', // Ruta de la imagen alternativa
+              width: 50.0,
+              height: 50.0,
+              fit: BoxFit.fill,
+            );
+          },
         ),
         Container(
           width: double.infinity,
@@ -231,6 +240,15 @@ class _PlanetDetailScreenState extends State<PlanetDetailScreen> {
                               width: 60.0,
                               height: 60.0,
                               fit: BoxFit.cover,
+                              errorBuilder: (context, error, stackTrace) {
+                                // Mostrar una imagen alternativa en caso de error
+                                return Image.asset(
+                                  'assets/images/ball.png', // Ruta de la imagen alternativa
+                                  width: 50.0,
+                                  height: 50.0,
+                                  fit: BoxFit.fill,
+                                );
+                              },
                             )
                           : const Icon(Icons.image, size: 60.0),
 

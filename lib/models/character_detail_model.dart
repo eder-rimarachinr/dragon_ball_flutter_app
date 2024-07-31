@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:dbz_app/models/planet_model.dart';
+
 CharacterDetailResponse characterDetailResponseFromJson(String str) =>
     CharacterDetailResponse.fromJson(json.decode(str));
 
@@ -17,7 +19,7 @@ class CharacterDetailResponse {
   String? image;
   String? affiliation;
   dynamic deletedAt;
-  OriginPlanet? originPlanet;
+  PlanetRes? originPlanet;
   List<Transformation>? transformations;
 
   CharacterDetailResponse({
@@ -49,7 +51,7 @@ class CharacterDetailResponse {
         deletedAt: json["deletedAt"],
         originPlanet: json["originPlanet"] == null
             ? null
-            : OriginPlanet.fromJson(json["originPlanet"]),
+            : PlanetRes.fromJson(json["originPlanet"]),
         transformations: json["transformations"] == null
             ? []
             : List<Transformation>.from(json["transformations"]!
@@ -71,42 +73,6 @@ class CharacterDetailResponse {
         "transformations": transformations == null
             ? []
             : List<dynamic>.from(transformations!.map((x) => x.toJson())),
-      };
-}
-
-class OriginPlanet {
-  int? id;
-  String? name;
-  bool? isDestroyed;
-  String? description;
-  String? image;
-  dynamic deletedAt;
-
-  OriginPlanet({
-    this.id,
-    this.name,
-    this.isDestroyed,
-    this.description,
-    this.image,
-    this.deletedAt,
-  });
-
-  factory OriginPlanet.fromJson(Map<String, dynamic> json) => OriginPlanet(
-        id: json["id"],
-        name: json["name"],
-        isDestroyed: json["isDestroyed"],
-        description: json["description"],
-        image: json["image"],
-        deletedAt: json["deletedAt"],
-      );
-
-  Map<String, dynamic> toJson() => {
-        "id": id,
-        "name": name,
-        "isDestroyed": isDestroyed,
-        "description": description,
-        "image": image,
-        "deletedAt": deletedAt,
       };
 }
 
